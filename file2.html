@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #edf2f7, #cbd5e0);
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(to right, #4c51bf, #667eea);
+      color: white;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-align: center;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background: linear-gradient(to right, #667eea, #4c51bf);
+      transform: scale(1.05);
+    }
+  </style>
+  <script>
+    function generatePassword() {
+      const length = document.getElementById("password-length").value;
+      const includeSpecialChars = document.getElementById("special-chars").checked;
+
+      if (!length || length <= 0) {
+        alert("Please enter a valid password length.");
+        return;
+      }
+
+      const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      const specialChars = "!@#$%^&*()_+[]{}|;:,.<>?";
+      const charSet = includeSpecialChars ? chars + specialChars : chars;
+
+      let password = "";
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charSet.length);
+        password += charSet[randomIndex];
+      }
+
+      document.getElementById("generated-password").textContent = `Generated Password: ${password}`;
+    }
+  </script>
+</head>
+<body class="py-10">
+  <div class="container mx-auto px-4">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Password Generator</h1>
+    <div class="bg-white p-6 rounded shadow mx-auto max-w-md">
+      <label for="password-length" class="block text-sm font-medium text-gray-600 mb-2">Password Length:</label>
+      <input type="number" id="password-length" class="border rounded p-2 w-full mb-4" placeholder="Enter length (e.g., 12)">
+      <div class="flex items-center mb-4">
+        <input type="checkbox" id="special-chars" class="mr-2">
+        <label for="special-chars" class="text-sm text-gray-600">Include Special Characters</label>
+      </div>
+      <button onclick="generatePassword()" class="btn w-full mb-4">Generate Password</button>
+      <p id="generated-password" class="text-lg font-semibold text-green-600"></p>
+      <a href="index.html" class="mt-6 inline-block bg-blue-500 text-white px-6 py-2 rounded shadow hover:bg-blue-600">Go Back</a>
+    </div>
+  </div>
+</body>
+</html>

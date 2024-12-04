@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+       background: linear-gradient( to top, #2a186b 25%, #1578da 65%); 
+      background:
+    radial-gradient(
+                    50% 500% at 50% -420%,
+                    rgba(51, 1, 100, 0.945) 80%,
+                    rgba(0, 0, 0, 0.1) 100%
+                ),black;
+    background-clip:content-box;
+      
+    }
+    .bg-white{
+        background: linear-gradient(to top , rgba(100, 100, 169, 0.326),rgba(0, 0, 255, 0.101));
+        box-shadow:1px 1px 6px 4px rgb(8, 114, 243);
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(to right, #8f3bd0, #be39c8);
+      color: white;
+      font-weight: bold;
+      padding: 19px 25px;
+      border-radius: 6px;
+      text-align: center;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover {
+      background: linear-gradient(to top, #0b5801, #0bdf0e);
+      transform: scale(1.05);
+    }
+    .text-4xl {
+        color:aliceblue;
+    }
+    .text-2xl{
+        color: antiquewhite;
+    }
+  </style>
+</head>
+<body class="py-10">
+  <div class="container mx-auto px-4">
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Security Hub</h1>
+
+    <!-- Virus Scanner Section -->
+    <div class="bg-white p-6 rounded shadow mb-8 mx-auto max-w-md">
+      <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">Cyber Threat</h2>
+      <div class="flex justify-center mb-4">
+        <img src="https://img.icons8.com/ios-filled/100/4c51bf/shield.png" alt="Shield Icon">
+      </div>
+      <a href="scan.html" class="btn w-full mb-4">Start Scan</a>
+    </div>
+
+    <!-- Password Generator Section -->
+    <div class="bg-white p-6 rounded shadow mx-auto max-w-md">
+      <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">Password Generator</h2>
+      <a href="file2.html" class="btn w-full mb-4">Generate Password</a>
+    </div>
+  </div>
+</body>
+</html>
